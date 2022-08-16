@@ -1,3 +1,13 @@
+/** global variables */
+
+let currentPencilColor = "black";
+const pencil = document.querySelector(".pencil");
+const eraser = document.querySelector(".eraser");
+const clear = document.querySelector(".clear");
+const darken = document.querySelector(".darken");
+const lighten = document.querySelector(".lighten");
+const rgb = document.querySelector(".rgb");
+
 /** draw grid function */
 
 function drawGrid(input) {
@@ -12,7 +22,7 @@ function drawGrid(input) {
     display.style['grid-template-columns'] = `repeat(${input}, ${input}fr)`;
 }
 
-drawGrid(64);
+drawGrid(16);
 
 /** draw event-listeners */
 
@@ -33,11 +43,11 @@ document.querySelectorAll(".pixel").forEach((pixel) => {
 
     pixel.addEventListener("mousemove", (e) => {
         if (mouseIsDown) {
-            pixel.style['background-color'] = "black";
+            pixel.style['background-color'] = currentPencilColor;
         }
     });
 
     pixel.addEventListener("click", (e) => {
-        pixel.style['background-color'] = "black";
+        pixel.style['background-color'] = currentPencilColor;
     });
 })
