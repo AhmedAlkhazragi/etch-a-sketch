@@ -55,12 +55,6 @@ button {
     scale: 1.2;
 }
 
-button:focus {
-    border: 5px solid #38393E;
-    background-color:#38393E;
-    color: lightgray;
-}
-
 .button-container {
     display: grid;
     grid-template-columns: repeat(3, 3fr);
@@ -96,4 +90,39 @@ button:focus {
     border: none;
     border-radius: 50%;
     border: 10px solid white;
+}
+
+.canvas-size-container  {
+    height: 11vh;
+    width: 11vh;
+    position: absolute;
+    bottom: 3%;
+    left: calc(28% + 65px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.canvas-size {
+    font-family: 'Shrikhand', cursive;
+    font-size: 30px;
+}
+
+.plus,
+.minus {
+    height: 40%;
+    width: 70%;
+    background-color: transparent;
+}
+
+.plus:hover,
+.minus:hover {
+    cursor: pointer;
+}
+
+.clear:active {
+    border: 5px solid #38393E;
+    background-color:#38393E;
+    color: lightgray;
 }
