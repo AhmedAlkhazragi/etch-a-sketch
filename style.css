@@ -111,6 +111,8 @@ button:hover {
 .canvas-size {
     font-family: 'Shrikhand', cursive;
     font-size: 1.1vw;
+    padding-top: 0.5vw;
+    padding-bottom: 0.5vw;
 }
 
 .plus,
