@@ -55,10 +55,14 @@ button {
     scale: 1.2;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 .button-container {
     display: grid;
-    grid-template-columns: repeat(3, 3fr);
-    grid-column-gap: 70px;
+    grid-template-columns: repeat(2, 2fr);
+    grid-column-gap: 110px;
     padding-top: 15px;
     position: absolute;
     bottom: 0;
