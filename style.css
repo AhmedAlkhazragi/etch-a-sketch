@@ -28,7 +28,7 @@
 }
 
 .display {
-    height: 42vw;
+    height: 75vh;
     width: 42vw;
     background-color: white;
     display: grid;
@@ -45,9 +45,9 @@
 button {
     border-radius: 20px;
     border: none;
-    font-size: 30px;
-    height: 50px;
-    width: 150px;
+    font-size: 1.2vw;
+    height: 4vh;
+    width: 8vw;
     font-family: 'Shrikhand', cursive;
     background-color: white;
     text-align: center;
@@ -62,7 +62,7 @@ button:hover {
 .button-container {
     display: grid;
     grid-template-columns: repeat(2, 2fr);
-    grid-column-gap: 110px;
+    grid-column-gap: 6vw;
     padding-top: 15px;
     position: absolute;
     bottom: 0;
@@ -110,7 +110,7 @@ button:hover {
 
 .canvas-size {
     font-family: 'Shrikhand', cursive;
-    font-size: 30px;
+    font-size: 1.2vw;
 }
 
 .plus,
@@ -150,7 +150,7 @@ button:hover {
 
 .plus-symbol,
 .minus-symbol {
-    font-size: 30px;
+    font-size: 1.2vw;
     font-weight: bold;
     font-family: 'Shrikhand';
 }

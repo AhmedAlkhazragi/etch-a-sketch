@@ -59,12 +59,10 @@ document.querySelectorAll(".pixel").forEach((pixel) => {
         pencil.style.cssText = "border: none; background-color: white; color: #38393E;";
         rgb.style.cssText = "border: none; background-color: white; color: #38393E;";
         eraser.style.cssText = "border: 5px solid #38393E; background-color:#38393E; color: lightgray;";
-        document.querySelectorAll(".pixel").forEach(pixel => {
-            pixel.addEventListener("mouseout", e => {
-                if (mouseIsDown === true) {
-                    currentPencilColor = "white";
-                };
-            });
+        pixel.addEventListener("mouseout", e => {
+            if (mouseIsDown === true) {
+                currentPencilColor = "white";
+            };
         });
     });
 
@@ -73,26 +71,22 @@ document.querySelectorAll(".pixel").forEach((pixel) => {
         eraser.style.cssText = "border: none; background-color: white; color: #38393E;";
         pencil.style.cssText = "border: 5px solid #38393E; background-color:#38393E; color: lightgray;";
 
-        document.querySelectorAll(".pixel").forEach(pixel => {
             pixel.addEventListener("mouseout", e => {
                 if (mouseIsDown === true) {
                     currentPencilColor = String(document.querySelector(".color-picker").value);
                 };
             });
-        });
     });
 
     rgb.addEventListener("click", e => {
         pencil.style.cssText = "border: none; background-color: white; color: #38393E;";
         eraser.style.cssText = "border: none; background-color: white; color: #38393E;";
         rgb.style.cssText = "border: 5px solid #38393E; background-color:#38393E; color: lightgray;";
-        document.querySelectorAll(".pixel").forEach(pixel => {
             pixel.addEventListener("mouseout", e => {
                 if (mouseIsDown === true) {
                     currentPencilColor = randomRGB();
                 };
             });
-        });
     });
 })
 };
