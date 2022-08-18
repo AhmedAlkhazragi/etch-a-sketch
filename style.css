@@ -134,14 +134,14 @@ button {
 
 .plus:active,
 .minus:active { 
-    background-color:#38393E; 
+    background-color:rgb(56, 57, 62); 
     color: lightgray;
 }
 
 .clear:active {
-    border: 5px solid #38393E;
-    background-color:#38393E;
-    color: lightgray;
+    border: 5px solid rgb(56, 57, 62);
+    background-color:rgb(56, 57, 62);
+    color: rgb(211, 211, 211);
 }
 
 .plus-symbol,

@@ -2,6 +2,7 @@
 
 let currentPencilColor = String(document.querySelector(".color-picker").value);
 let canvasSize = 8;
+let alpha = 1;
 const pencil = document.querySelector(".pencil");
 const eraser = document.querySelector(".eraser");
 const clear = document.querySelector(".clear");
@@ -10,12 +11,11 @@ const lighten = document.querySelector(".lighten");
 const rgb = document.querySelector(".rgb");
 const plus = document.querySelector(".plus");
 const minus = document.querySelector(".minus");
+const display = document.querySelector(".display");
 
 /** draw grid function */
 
-function drawGrid(input = 64) {
-    const display = document.querySelector(".display");
-
+function drawGrid(input) {
     for (let i = 0; i < input * input; i++) {
         const div = document.createElement('div');
         div.className = "pixel";
@@ -23,13 +23,8 @@ function drawGrid(input = 64) {
     }
 
     display.style['grid-template-columns'] = `repeat(${input}, ${input}fr)`;
-}
 
-drawGrid();
-
-/** draw event-listeners */
-
-let mouseIsDown = false;
+    let mouseIsDown = false;
 document.querySelectorAll(".pixel").forEach((pixel) => {
     pixel.addEventListener("mousedown", (e) => {
         mouseIsDown = true;
@@ -41,6 +36,7 @@ document.querySelectorAll(".pixel").forEach((pixel) => {
 
 document.querySelector(".color-picker").addEventListener("mouseout", (e) => {
     currentPencilColor = String(document.querySelector(".color-picker").value);
+    console.log(currentPencilColor);
 })
 
 document.querySelectorAll(".pixel").forEach((pixel) => {
@@ -78,27 +74,32 @@ document.querySelectorAll(".pixel").forEach((pixel) => {
         eraser.style.cssText = "border: none; background-color: white; color: #38393E;";
         pencil.style.cssText = "border: 5px solid #38393E; background-color:#38393E; color: lightgray;";
         currentPencilColor = String(document.querySelector(".color-picker").value);
-    })
+    });
 })
+};
 
-function removeAllPixels() {
+drawGrid(canvasSize);
+
+function removePixel() {
     document.querySelectorAll(".pixel").forEach(pixel => {
         pixel.remove();
     })
-}
+};
 
-plus.addEventListener("click", (e) => {
+plus.addEventListener("click", e => {
     if (canvasSize < 128) {
-        canvasSize = canvasSize * 2;
-        removeAllPixels();
-        drawGrid(canvasSize);
+    canvasSize = (canvasSize * 2);
+    removePixel();
+    drawGrid(canvasSize);
+    document.querySelector(".canvas-size").innerText =  `${canvasSize} x ${canvasSize}`;
     }
-})
+});
 
-minus.addEventListener("click", (e) => {
+minus.addEventListener("click", e => {
     if (canvasSize > 8) {
-        canvasSize = canvasSize / 2;
-        removeAllPixels();
-        drawGrid(canvasSize);
+    canvasSize = (canvasSize / 2);
+    removePixel();
+    drawGrid(canvasSize);
+    document.querySelector(".canvas-size").innerText =  `${canvasSize} x ${canvasSize}`;
     }
-})
+});
